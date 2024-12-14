@@ -8,6 +8,8 @@ package javazoom.jl.player;
 
 import org.junit.jupiter.api.Test;
 
+import javazoom.jl.player.my.MyJavaSoundAudioDeviceFactory;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
@@ -23,6 +25,7 @@ public class JavaSoundAudioDeviceTest {
     @Test
     void test() throws Exception {
         FactoryRegistry factoryRegistry = FactoryRegistry.systemRegistry();
+        factoryRegistry.addFactory(new MyJavaSoundAudioDeviceFactory());
         assertEquals(3, factoryRegistry.factories.size()); // default 2 + my 1
 
         AudioDeviceFactory audioDeviceFactory = factoryRegistry.getFactoriesPriority()[2];
