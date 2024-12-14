@@ -3,22 +3,7 @@
 
   <groupId>org.prelle</groupId>
   <artifactId>jlayer</artifactId>
-  <version>1.0.4-SNAPSHOT</version>
-
-    <licenses>
-        <license>
-            <name>GNU lesser general public license 2.1</name>
-            <url>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>Naohide Sano</name>
-            <email>namachapanda2005@gmail.com</email>
-        </developer>
-    </developers>
+  <version>1.0.3</version>
 
   <build>
     <plugins>
@@ -42,78 +27,6 @@
           <trimStackTrace>false</trimStackTrace>
         </configuration>
       </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                        <configuration>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.10.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <author>false</author>
-                            <failOnError>false</failOnError>
-                            <sourceFileExcludes>
-                                <sourceFileExclude>**/module-info.java</sourceFileExclude>
-                            </sourceFileExcludes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <configuration>
-                            <gpgArguments>
-                                <arg>--pinentry-mode</arg>
-                <arg>loopback</arg>
-                            </gpgArguments>
-                        </configuration>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.13</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                    <keepStagingRepositoryOnCloseRuleFailure>false</keepStagingRepositoryOnCloseRuleFailure>
-                    <autoDropAfterRelease>true</autoDropAfterRelease>
-                </configuration>
-            </plugin>
     </plugins>
   </build>
 
@@ -160,27 +73,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-    <ciManagement>
-        <system>Bitbucket Pipelines</system>
-        <url>https://bitbucket.org/taranion/libansi/pipelines</url>
-    </ciManagement>
-
-    <scm>
-        <connection>scm:git:git://bitbucket.org/taranion/libansi.git</connection>
-        <developerConnection>scm:git:ssh://bitbucket.org:taranion/libansi.git</developerConnection>
-        <url>https://bitbucket.org/taranion/libansi/src</url>
-    </scm>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
-    </distributionManagement>
 </project>
