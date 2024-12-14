@@ -1,4 +1,4 @@
-**This is a fork of the from [here](https://github.com/umjammer/jlayer/). Except turning it into a Java module no changes have been made and I don't intend to improve it further.**
+**This is a fork of the from [here](https://github.com/umjammer/jlayer/). Except turning it into a Java module no changes have been made and I don't intend to improve it further.
 
 [![Release](https://jitpack.io/v/umjammer/jlayer.svg)](https://jitpack.io/#umjammer/jlayer)
 [![Java CI](https://github.com/umjammer/jlayer/actions/workflows/maven.yml/badge.svg)](https://github.com/umjammer/jlayer/actions/workflows/maven.yml)
